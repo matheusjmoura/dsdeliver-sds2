@@ -5,8 +5,8 @@ import { fetchLocalMapBox } from '../api';
 import { OrderLocationData } from './types';
 
 const initialPosition = {
-  lat: -23.3271706,
-  lng: -51.1796793,
+  lat: -18.9346767,
+  lng: -48.289632,
 };
 
 type Place = {
@@ -82,7 +82,11 @@ function OrderLocation({ onChangeLocation }: Props) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={address.position}>
-            <Popup>{address.label}</Popup>
+            <Popup>
+              {address.label
+                ? address.label
+                : 'Rua Icarai 356 - Apt 601, Patrimônio, Uberlândia - Minas Gerais, 38411-048, Brazil'}
+            </Popup>
           </Marker>
         </MapContainer>
       </div>
